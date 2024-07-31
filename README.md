@@ -3,6 +3,8 @@ Copyright (C) 1992, 93 by Petrosyan Alexander
 
 Файловый менеджер для УКНЦ со встроенным просмотрщиком. Клон Norton Commander.
 
+![SCREEN1.PNG](SCREEN1.PNG)
+
 Сейчас 26 марта 2006 года, по просьбе 'архивариуса', Arseny Gordin <arseny3@mail.ru>, я
 Петросян Александр <paf@yandex.ru>
 пишу, что запомнилось.
