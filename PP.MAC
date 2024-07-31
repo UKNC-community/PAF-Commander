@@ -378,7 +378,10 @@ WPROT$		=	4
 MOTOR$		=	20
 EGEGE$		=	2000
 
-	.PUSH	<R0, R1, R2, R3>
+	MOV	R0,-(SP)
+	MOV	R1,-(SP)
+	MOV	R2,-(SP)
+	MOV	R3,-(SP)
 
 	MOV	#4, R0
 	MOV	#EGEGE$!3, R1
@@ -408,7 +411,10 @@ EGEGE$		=	2000
 
 	CLR	@#DISK$CSR
 
-	.POP	<R3, R2, R1, R0>
+	MOV	(SP)+,R3
+	MOV	(SP)+,R2
+	MOV	(SP)+,R1
+	MOV	(SP)+,R0
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
