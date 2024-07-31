@@ -5,6 +5,14 @@ Copyright (C) 1992, 93 by Petrosyan Alexander
 
 ![SCREEN1.PNG](SCREEN1.PNG)
 
+Сборка
+======
+https://gitlab.com/Rhialto/macro11 соберите и положите бинарь в текущий каталог.
+
+
+Воспоминания
+============
+
 Сейчас 26 марта 2006 года, по просьбе 'архивариуса', Arseny Gordin <arseny3@mail.ru>, я
 Петросян Александр <paf@yandex.ru>
 пишу, что запомнилось.
