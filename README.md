@@ -5,9 +5,9 @@ Copyright (C) 1992, 93 by Petrosyan Alexander
 
 ![SCREEN1.PNG](SCREEN1.PNG)
 
-Сборка
+Сборка0
 ======
-https://gitlab.com/Rhialto/macro11 соберите и положите бинарь в текущий каталог.
+https://gitlab.com/Rhialto/macro11 не потянула, глючит на раскрытии системных библиотек.
 
 
 Воспоминания
