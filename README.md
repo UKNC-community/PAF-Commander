@@ -9,6 +9,33 @@ Copyright (C) 1992, 93 by Petrosyan Alexander
 ======
 https://gitlab.com/Rhialto/macro11 не потянула, глючит на раскрытии системных библиотек.
 
+Сборка
+======
+на windows
+```
+compile.cmd
+link.cmd
+up.cmd
+```
+получится [mz80_PC.dsk](mz80_PC.dsk)
+
+Откройте эмулятор, например этот:
+https://nzeemin.github.io/ukncbtl-wasm/index.html?run=1
+(или https://github.com/nzeemin/ukncbtl)
+
+Подключите диск 0.
+Загрузитесь с диска 0.
+
+(Пока не получается ни работоспособный .exe ни .sav -- pc.sav не запускает pc.exe, а команда r pc.exe уходит в СТОП или зависает со страшными глюками на экране)
+
+Сборка2
+=======
+на mac
+```
+#compile на windows
+#link на windows
+up #на mac
+```
 
 Воспоминания
 ============
