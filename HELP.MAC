@@ -33,6 +33,9 @@ BRDI::	.EXT	50,1
 
 	.EXT	44,1
 	.ASCII	"         Petrosyan Alexander          "
+	.EXT	44,1
+
+	.EXT	44,1
 	.ASCII	"   Kisly Alexey (protection removal)  "
 	.EXT	44,1
 
