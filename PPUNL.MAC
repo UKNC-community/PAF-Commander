@@ -29,6 +29,6 @@ PP$ADR	==	. + 2
 OLD$KB	==	. + 2
 	MOV	#0,@#60
 
-	MOV	#.K25,-(SP)
-	MOV	#10554,-(SP)
-	MOV	#1,-(SP)
+	RETURN
+
+	.END
