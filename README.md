@@ -37,6 +37,11 @@ https://nzeemin.github.io/ukncbtl-wasm/index.html?run=1
 up #на mac
 ```
 
+Снятие блокировки
+-----------------
+Алексей Кислый 2024 08
+https://t.me/UKNC_TECHNOLOGY/6749
+
 Воспоминания
 ============
 
