@@ -58,7 +58,8 @@ UNPACK::
 
 	MOVB	#'-,(R1)+
 
-	MOV	(R2),R3
+	MOV	(R2),R3                     ;AAMMMMDD DDDYYYYY
+    BIC #^B1100000000000000, R3     ;++ TK ++ clear 'age bits'
 	ASH	#-10.,R3
 	BEQ	BAD
 	CMP	R3,#12.
@@ -72,9 +73,22 @@ UNPACK::
 	MOVB	#'-,(R1)+
 
 	MOV	(R2),R0
+    MOV (R2), R3
+	BIC #^B0011111111111111, R3     ;++ TK ++ remains 'age bits'
+    CLC                             ;++ TK ++ we'll move 'age bits' all the way to the right,
+	ROR R3                          ;++ TK ++ now it is definitely positive
+    ASH #-13., R3                   ;++ TK ++ so it is more profitable than 13x ROR ...
 	BIC	#^C37,R0
 	ADD	#72.,R0
-	MOV	#2,R3
+4$: TST R3                          ;++ TK ++ use age value
+	BEQ 5$                          ;++ TK ++
+    ADD #32.,R0                     ;++ TK ++ one 'age' = 32. years
+    DEC R3                          ;++ TK ++
+	BR  4$                          ;++ TK ++
+5$: CMP #100.,R0                    ;++ TK ++
+    BHI 6$                          ;++ TK ++
+	SUB #100., R0                   ;++ TK ++
+6$:	MOV	#2,R3
 	CALL	.10
 	ADD	#2,R1
 
@@ -94,8 +108,8 @@ UNPACK::
 
 BAD:	MOV	(SP)+,R1
 	MOV	#9.,R0
-4$:	MOVB	#' ,(R1)+
-	SOB	R0,4$
+7$:	MOVB	#' ,(R1)+
+	SOB	R0,7$
 	CLR	@R2
 	BR	3$
 
