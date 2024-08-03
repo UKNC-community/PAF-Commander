@@ -1,14 +1,12 @@
 .MCALL	.MODULE
 .MODULE	PC,RELEASE=V01,VERSION=00,COMMENT=<PAF Commander>
-    .LIBRARY "SY:SYSTEM.MLB"
-	.MCALL	.LOCK	.SERR   .SYCDF	.FIXDF
+
+	.MCALL	.LOCK	.SERR
 	.MCALL	.PURGE	.LOOKU	.READW
 	.MCALL	.SETTO	.PRINT	.EXIT
-	.MCALL	.JSWDF	
-;	.SCMDF	.ROFDF
 	.DSABL	GBL
 	.GLOBL	.10	RAD
-	.GLOBL	PP$LOA	PP$UNL	HR	BRDI
+	.GLOBL	PP$LOA	PP$UNL	BRDI
 	.GLOBL	ON.HND	PUT.HN	OFF.HN
 	.GLOBL	INIEXT	EXENTE
 	.GLOBL	INIINI	S.F9
@@ -30,17 +28,16 @@
 	.GLOBL	A.F1	A.F2	A.F5	A.F7	A.F8
 	.GLOBL	A.F9	A.F10	S.F10
 
+	.INCLU	/LIBMAC/
 	.INCLU	"SCRMAC"
 	.INCLU	"DIAMAC"
 
 .SBTTL Constants definition
 
-    .SYCDF
-    .FIXDF
 	.JSWDF
-;	.SCMDF
-;	.ROFDF
-	
+	.SCMDF
+	.ROFDF
+
 LINES	==	17.
 
 MAXFIL	==	150.
@@ -87,21 +84,18 @@ NOTF:	RTS	R0
 
 PCSTART::
 	.LOCK
-	MOV	@#$SYPTR,R0
+	MOV	@#SYSPTR,R0
 	MOV	$USRLC(R0),R0
 	TST	-(R0)
 	.SETTO
 	CMP	#...,R0
-	BLO	1$
+	BLO	10$
 	.PRINT	#T.MEM
 	JMP	SETTO
 
-1$:	.SERR
+10$:	.SERR
 
 	CALL	PP$LOA
-
-.HR::	BR	.
-	.WORD	HR
 
 	CALL	ON.HND
 	BCC	1$
@@ -505,7 +499,7 @@ STENTER::
 	SUB	#512,R0
 	MOV	R0,@#510
 	CALL	PUT.HND
-CMD:	BIS	#CHNIF$,@#$JSW
+CMD:	BIS	#CHNIF$,@#JSW
 
 DONE:	CALL	W01
 	.WCLR	#WIDTH-5,#0,#5
@@ -514,7 +508,7 @@ DONE:	CALL	W01
 EXIT:
 	MOV	#<CLR$END-CLR$BEGIN>/2,R0
 	MOV	#CLR$END,R1
-	MOV	@#$USRTO,R2
+	MOV	@#USERTOP,R2
 1$:	MOV	-(R1),-(R2)
 	SOB	R0,1$
 	JMP	@R1
@@ -531,7 +525,7 @@ CLR$END:
 
 SETTO::	CALL	OFF.HND
 	BCS	EXIT
-	BIS	#CHNIF$,@#$JSW
+	BIS	#CHNIF$,@#JSW
 	BR	EXIT
 
 W01:
@@ -1265,4 +1259,3 @@ T.TLDH::	.ASCIZ	"to load device driver"
 		.EVEN
 
 	.END	PCSTART
-                                                                                                                                                               

@@ -139,7 +139,7 @@ ITEMS	=	. + 2
 4$:	MOV	(R1)+,R3
 	BMI	1$
 	BEQ	11$
-	MOV	R3,.R3
+;	MOV	R3,.R3
 	TSTB	FGET
 	BLE	13$
 	TSTB	ING
@@ -164,9 +164,9 @@ ITEMS	=	. + 2
 	SUB	R2,R0
 	ASR	R0
 	ADD	BX,R0
-	TST	NOTGET
-	BEQ	101$
-.R3	=	. + 2
+;	TST	NOTGET
+;	BEQ	101$
+;.R3	=	. + 2
 ;	CMP	#0,#T.OWNER
 ;	BEQ	100$
 ;	CMP	.R3,#T.PHO
