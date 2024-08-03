@@ -24,15 +24,16 @@ BRDI::	.EXT	50,1
 	.EXT	77,1
 
 	.EXT	44,1
-	.ASCII	"   The PAF Commander, Version 2.00    "
+	.ASCII	"   The PAF Commander, Version 2.01    "
 	.EXT	44,1
 
 	.EXT	44,1
-	.ASCII	"      Copyright (C) 1992, 93 by       "
+	.ASCII	"   Copyright (C) 1992, 93, 2024 by    "
 	.EXT	44,1
 
 	.EXT	44,1
 	.ASCII	"         Petrosyan Alexander          "
+	.ASCII	"   Kisly Alexey (protection removal)  "
 	.EXT	44,1
 
 	.EXT	42,1
